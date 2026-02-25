@@ -28,7 +28,7 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
-  background-color: #ffd6d6;
+  background-color: #fc7a85;
 }
 
 nav{
@@ -51,7 +51,17 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  /* background-color: #ffa5ab;
+   */
+  -webkit-animation: radiate 1s forwards ;
+  /* -webkit-animation: wtob 1s forwards; */
+  /* -moz-animation: radiate 1s ease-in-out infinite alternate;
+  animation: radiate 1s ease-in-out infinite alternate; */
+}
+
+button:not(:hover){
+  -webkit-animation: nradiate 1s forwards ;
+  /* -webkit-animation: btow 1s forwards; */
 }
 button:focus,
 button:focus-visible {
@@ -85,7 +95,7 @@ button:focus-visible {
   animation: glow 1s ease-in-out infinite alternate;
 }
 #conHead_div{
-  background-color: #ff5757;
+  background-color: #ADEBB3;
   border-radius: 30px;
   width: 1350px;
   height: 590px;
@@ -104,11 +114,55 @@ button:focus-visible {
 #start{
   width: 300px;
 }
+
+
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px #ffdfdf;
   }
   to {
     text-shadow: 0 0 20px #fadddd;
+  }
+}
+
+
+@-webkit-keyframes radiate {
+  from {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  to{
+    background-color: #ffa5ab;
+    color: #1a1a1a
+  }
+}
+
+@-webkit-keyframes nradiate {
+  from {
+    background-color: #ffa5ab;
+    color: #1a1a1a
+  }
+  to{
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+
+
+@-webkit-keyframes wtob {
+  from {
+    color: #ffffff;
+  }
+  to{
+    color: #1a1a1a;
+  }
+}
+
+@-webkit-keyframes btow {
+  from {
+    color: #1a1a1a;
+  }
+  to{
+    color: #ffffff;
   }
 }
