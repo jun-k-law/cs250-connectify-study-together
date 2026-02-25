@@ -1,18 +1,11 @@
 
-
+import { useNavigate } from "react-router-dom";
 
 function Testt(){
+    const nav = useNavigate();
     return(
         <div>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
-            <h1>hi</h1>
+            <button onClick={() => nav("/")}>Back</button>
         </div>
     );
 }

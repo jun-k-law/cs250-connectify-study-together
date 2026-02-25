@@ -28,7 +28,7 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
-  background-color: #fc7a85;
+  background-color: #ffa5ab;
 }
 
 nav{
@@ -95,7 +95,7 @@ button:focus-visible {
   animation: glow 1s ease-in-out infinite alternate;
 }
 #conHead_div{
-  background-color: #ADEBB3;
+  background-color: #d4ff9d;
   border-radius: 30px;
   width: 1350px;
   height: 590px;
