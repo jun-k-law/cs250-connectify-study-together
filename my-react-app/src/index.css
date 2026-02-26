@@ -53,14 +53,14 @@ button {
 button:hover {
   /* background-color: #ffa5ab;
    */
-  -webkit-animation: radiate 1s forwards ;
+  /* -webkit-animation: radiate 1s forwards ; */
   /* -webkit-animation: wtob 1s forwards; */
   /* -moz-animation: radiate 1s ease-in-out infinite alternate;
   animation: radiate 1s ease-in-out infinite alternate; */
 }
 
 button:not(:hover){
-  -webkit-animation: nradiate 1s forwards ;
+  /* -webkit-animation: nradiate 1s forwards ; */
   /* -webkit-animation: btow 1s forwards; */
 }
 button:focus,
@@ -81,7 +81,13 @@ button:focus-visible {
   }
 }
 
+/*
+========================
+    Landing Page
+========================
+*/
 
+/*    Header   */
 #conHead{
   color:#ffffff;
   font-size: 200px;
@@ -94,6 +100,8 @@ button:focus-visible {
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
+
+/*    Inner Container   */
 #conHead_div{
   background-color: #d4ff9d;
   border-radius: 30px;
@@ -111,20 +119,141 @@ button:focus-visible {
 #conHead_div p{
   font-size: 30px;
 }
+
+/*    Start Button    */
 #start{
   width: 300px;
 }
 
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #ffdfdf;
-  }
-  to {
-    text-shadow: 0 0 20px #fadddd;
-  }
+#start:hover{
+  -webkit-animation: radiate 1s forwards ;
+}
+#start:not(:hover){
+  -webkit-animation: nradiate 1s forwards ;
 }
 
+
+
+/* 
+=====================
+      DISCOVER 
+=====================
+*/
+
+/*    Navigation Bar    */
+#navBar {
+  position: fixed;
+  z-index: 0;
+  top: -10px;
+  left:0px; 
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #d4ff9d;
+  display: flex;
+  
+}
+/* Hold the position of Nav bar */
+#navBarRel{
+  position: relative;
+  
+  top: -10px;
+  left:0px; 
+  width: 100%;
+  height: 70px;
+  z-index: -1;
+}
+.navMenu {
+  z-index: 10;
+}
+#navMenuCon{
+  /* position: relative; */
+  align-self: flex-start;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+
+#LogoCon {
+  align-self: center;
+  margin-top: 15px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  left: 36%;
+  
+}
+#Logo {
+  
+  color:#ffffff;
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+
+  -webkit-animation: glow1 1s ease-in-out infinite alternate;
+
+}
+
+
+#sidebar {
+  position: fixed;
+  left: 0px;
+  top:0px;
+  width: 250px;
+  height: 500px;
+  background-color: #b7dd85;
+  
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+#backMenu{
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.navbtn {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+#rowGroup{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#navSettingBtn{
+  margin-right: 10px;
+}
+/* 
+=====================
+      ANIMATIONS  
+=====================
+*/
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #f8a2a2;
+  }
+  to {
+    text-shadow: 0 0 20px #f8a2a2;
+  }
+}
+@-webkit-keyframes glow1 {
+  from {
+    text-shadow: 0 0 10px #f7b4b4;
+  }
+  to {
+    text-shadow: 0 0 20px #f8a2a2 ;
+  }
+}
 
 @-webkit-keyframes radiate {
   from {
