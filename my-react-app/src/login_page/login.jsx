@@ -23,7 +23,7 @@ export default function Login () {
                          </div>
                    
             <div className="login-button"> 
-                <button onClick={() => goTo("/test2")} class="btn btn-primary"> Log In </button>
+                <button onClick={() => goTo("/home")} class="btn btn-primary"> Log In </button>
             </div>
             
                 </div>

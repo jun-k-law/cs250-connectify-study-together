@@ -9,8 +9,19 @@ function Testt(){
     const[showMenu, setShowMenu] = useState(false);
     
     return(
-        <div>
-            <button onClick={() => nav("/")}>Back</button>
+        <>
+        {/* Navigation bar */}
+        <div id="navBar">
+            <div id = "navMenuCon">
+                <button 
+                    class="navMenu"
+                    onClick={() => setShowMenu(!showMenu)}>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div id = "LogoCon">
+                <p id ="Logo">Connectify</p>
+            </div>
         </div>
 
 
@@ -20,16 +31,9 @@ function Testt(){
         <div id="DiscoverDiv"></div>
 
         {/* Side Bar */}
-        <AnimatePresence mode="wait">
+        
         {showMenu &&  (
-            <motion.div 
-                id="sidebar"
-                key="sidebar"
-                initial={{x:"-100%"}}
-                exit={{x:"-100%"}}
-                animate={{x:0}}
-                transition={{type:'spring', duration:0.4, bounce:0.3}}
-            >
+            <div id="sidebar"> 
                 <button id="backMenu" onClick={() => setShowMenu(!showMenu)}>
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
@@ -41,10 +45,9 @@ function Testt(){
                     <button id = "navSettingBtn" onClick={() => nav("/")}><i class="fa-solid fa-gear"></i></button>
                     <button id = "navSettingBtn" onClick={() => nav("/")}>Settings</button>
                 </div>
-                
-            </motion.div>
+            </div>
+            
         )}
-        </AnimatePresence>
         
         {/* Navigation Space */}
         
