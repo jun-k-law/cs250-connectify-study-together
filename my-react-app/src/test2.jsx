@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {motion} from "motion/react"
+import {motion, AnimatePresence} from "motion/react"
 
 
 function Testt(){
@@ -22,13 +22,22 @@ function Testt(){
             <div id = "LogoCon">
                 <p id ="Logo">Connectify</p>
             </div>
+        </div>
 
+
+        <div id="navBarRel"></div>
+
+        <div id="DiscoverText"></div>
+        <div id="DiscoverDiv"></div>
 
         {/* Side Bar */}
-        </div>
+        <AnimatePresence mode="wait">
         {showMenu &&  (
-            <motion.div id="sidebar"
+            <motion.div 
+                id="sidebar"
+                key="sidebar"
                 initial={{x:"-100%"}}
+                exit={{x:"-100%"}}
                 animate={{x:0}}
                 transition={{type:'spring', duration:0.4, bounce:0.3}}
             >
@@ -46,18 +55,9 @@ function Testt(){
                 
             </motion.div>
         )}
-
+        </AnimatePresence>
+        
         {/* Navigation Space */}
-        <div id="navBarRel"></div>
-
-        <div>
-            
-        </div>
-        <div>
-            
-
-
-        </div>
         
         </>
     );

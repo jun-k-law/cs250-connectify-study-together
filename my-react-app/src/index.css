@@ -156,7 +156,6 @@ button:focus-visible {
 /* Hold the position of Nav bar */
 #navBarRel{
   position: relative;
-  
   top: -10px;
   left:0px; 
   width: 100%;
@@ -232,6 +231,24 @@ button:focus-visible {
 }
 #navSettingBtn{
   margin-right: 10px;
+}
+
+
+
+
+
+
+
+#DiscoverText{
+  position: relative;
+  height: 100px;
+}
+
+#DiscoverDiv{
+  position: relative;
+  background-color: #242424;
+  width: 100px;
+  height: 100px;
 }
 /* 
 =====================
