@@ -31,16 +31,9 @@ function Testt(){
         <div id="DiscoverDiv"></div>
 
         {/* Side Bar */}
-        <AnimatePresence mode="wait">
+        
         {showMenu &&  (
-            <motion.div 
-                id="sidebar"
-                key="sidebar"
-                initial={{x:"-100%"}}
-                exit={{x:"-100%"}}
-                animate={{x:0}}
-                transition={{type:'spring', duration:0.4, bounce:0.3}}
-            >
+            <div>
                 <button id="backMenu" onClick={() => setShowMenu(!showMenu)}>
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
@@ -53,9 +46,9 @@ function Testt(){
                     <button id = "navSettingBtn" onClick={() => nav("/")}>Settings</button>
                 </div>
                 
-            </motion.div>
+            </div>
         )}
-        </AnimatePresence>
+        
         
         {/* Navigation Space */}
         
