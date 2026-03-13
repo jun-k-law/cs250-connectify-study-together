@@ -1,8 +1,7 @@
-@ -0,0 +1,67 @@
 import { useNavigate } from "react-router-dom";
 import './login.css';
 import { useState } from "react";
-import supabase from "../../SupabaseClient";
+import supabase from "../SupabaseClient";
 
 
 export default function Login () {
