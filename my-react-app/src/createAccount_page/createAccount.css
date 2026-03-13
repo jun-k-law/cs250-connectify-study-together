@@ -1,0 +1,32 @@
+.card-body {
+    width: 600px;
+    color: black;
+    margin-left: 7%;
+    margin-top: 15%
+}
+
+.card {
+    width: 700px;
+    height: 700px;
+    margin-left: 90%;
+    margin-top: 15%;
+}
+
+.login-button {
+    margin-top: 10%;
+}
+
+.login {
+    margin-top: 12%;
+    margin-bottom: 3%;
+}
+
+.top {
+    margin-left: 36%;
+    margin-top: -7%;
+    font-size: 45px;
+}
+
+.forgot-password {
+    margin-top: 1%;
+}

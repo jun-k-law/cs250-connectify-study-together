@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import './login.css';
+import './createAccount.css';
 import { useState } from "react";
 import supabase from "../SupabaseClient";
 
 
-export default function Login () {
+export default function Create () {
     const goTo = useNavigate();
 
     const [email, setEmail] = useState("")
@@ -15,7 +15,7 @@ export default function Login () {
         e.preventDefault();
         setMessage("");
 
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signUp({
             email,
             password
         });
@@ -37,7 +37,7 @@ export default function Login () {
         <div className="all"> 
             <div class="card">
                 <div class="card-body">
-                    <h2 className="top"> Sign in </h2>
+                    <h2 className="top"> Create account </h2>
                     
                     <form onSubmit = {handlesSignUp}>
                     <div className="login">
@@ -47,22 +47,17 @@ export default function Login () {
                 <div className="pass">
                     <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
                     <input value = {password} onChange = {(e) => setPassword(e.target.value)} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off"/>
-                    <div className="forgot-password">  
-                        <small id="passHelp" class="form-text text-muted"> <u>Forgot password?</u> </small>
-                </div>
+
             <div/>
                          </div>
 
             <div>
 
-            <div className="Create - button"> 
-                <button onClick={() => goTo("/createAccount_page")} class="btn btn-primary"> Create account </button>
-            </div>
-
+            
             </div>  
             
-            <div className="login-button"> 
-                <button type = "submit"  class="btn btn-primary"> Log In </button>
+            <div className="Sign Up -button"> 
+                <button type = "submit"  class="btn btn-primary"> Sign Up </button>
 
             </div>
             {message && <p class = "message"> {message} </p>}
