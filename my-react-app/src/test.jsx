@@ -14,7 +14,7 @@ function Testing(){
                 <Route path="/home" element={<Testt />} />
                 <Route path ="/login" element={<Login_Page />} />
                 <Route path="/login_page" element={<Login_Screen />}/> 
-                <Route path="/createAccount_age" element={<CreateAccount />} />
+                <Route path="/createAccount_page" element={<CreateAccount />} />
                
             
             </Routes>
