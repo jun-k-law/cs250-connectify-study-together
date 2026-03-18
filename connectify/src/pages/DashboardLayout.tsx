@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 export default function DashboardLayout() {
   return (
-    <div className="container py-4">
+    <div className="container-fluid py-4">
       <Outlet />
     </div>
   );
