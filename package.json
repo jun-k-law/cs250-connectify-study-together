@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@supabase/supabase-js": "^2.99.2",
     "bootswatch": "^5.3.8",
     "motion": "^12.34.3",
     "react-router-dom": "^7.13.1"
