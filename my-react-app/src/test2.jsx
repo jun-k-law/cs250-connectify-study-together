@@ -27,13 +27,13 @@ function Testt(){
 
         <div id="navBarRel"></div>
 
-        <div id="DiscoverText"></div>
+        <div id="DiscoverText"><p id="text">Discovery</p></div>
         <div id="DiscoverDiv"></div>
 
         {/* Side Bar */}
         
         {showMenu &&  (
-            <div>
+            <div id = "sidebar">
                 <button id="backMenu" onClick={() => setShowMenu(!showMenu)}>
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>

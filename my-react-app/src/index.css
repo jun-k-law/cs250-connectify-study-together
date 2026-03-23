@@ -116,6 +116,17 @@ button:focus-visible {
   align-items: center;
 }
 
+#text {
+  color:#ffffff;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 0px;
+  -webkit-animation: glow1 1s ease-in-out infinite alternate;
+}
+
 #conHead_div p{
   font-size: 30px;
 }
@@ -159,7 +170,7 @@ button:focus-visible {
   top: -10px;
   left:0px; 
   width: 100%;
-  height: 70px;
+  height: 30px;
   z-index: -1;
 }
 .navMenu {
@@ -234,21 +245,20 @@ button:focus-visible {
 }
 
 
-
-
-
-
-
 #DiscoverText{
-  position: relative;
+  position: flex;
   height: 100px;
+  width: 100vw;
+  /* background-color: #1a1a1a; */
+  align-items: center;
+  justify-content: center;
 }
 
 #DiscoverDiv{
   position: relative;
   background-color: #242424;
-  width: 100px;
-  height: 100px;
+  width: 100iphyhibibiubuovw;
+  height: 35.93vw;
 }
 /* 
 =====================
@@ -269,6 +279,14 @@ button:focus-visible {
   }
   to {
     text-shadow: 0 0 20px #f8a2a2 ;
+  }
+}
+@-webkit-keyframes glow1 {
+  from {
+    text-shadow: 0 0 10px #8ddc86;
+  }
+  to {
+    text-shadow: 0 0 20px #93db8c ;
   }
 }
 
