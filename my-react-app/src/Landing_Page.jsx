@@ -7,7 +7,7 @@ function Connectify_Landing(){
         <div id="conHead_div">
             <h1 id="conHead">Connectify</h1>
             <p>Connect and Study together with your peers!</p>
-                <button id = "start" onClick={() =>nav("/test2")}>
+                <button id = "start" onClick={() =>nav("/login_page")}>
                     Start
                 </button>
         </div> 

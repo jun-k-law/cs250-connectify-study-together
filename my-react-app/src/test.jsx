@@ -3,14 +3,20 @@ import { BrowserRouter, Routes, Route, Link, useNavigate, Outlet } from 'react-r
 import Testt from './test2';
 import Connectify_Landing from './Landing_Page';
 import Login_Page from './Login';
+import Login_Screen from './login_page/login'; 
+import CreateAccount from "./createAccount_page/createAccount";
 
 function Testing(){
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Connectify_Landing />} />
-                <Route path="/test2" element={<Testt />} />
+                <Route path="/home" element={<Testt />} />
                 <Route path ="/login" element={<Login_Page />} />
+                <Route path="/login_page" element={<Login_Screen />}/> 
+                <Route path="/createAccount_page" element={<CreateAccount />} />
+               
+            
             </Routes>
         </BrowserRouter>
     );

@@ -33,7 +33,7 @@ function Testt(){
         {/* Side Bar */}
         
         {showMenu &&  (
-            <div id = "sidebar">
+            <div id="sidebar"> 
                 <button id="backMenu" onClick={() => setShowMenu(!showMenu)}>
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
@@ -45,10 +45,9 @@ function Testt(){
                     <button id = "navSettingBtn" onClick={() => nav("/")}><i class="fa-solid fa-gear"></i></button>
                     <button id = "navSettingBtn" onClick={() => nav("/")}>Settings</button>
                 </div>
-                
             </div>
+            
         )}
-        
         
         {/* Navigation Space */}
         
