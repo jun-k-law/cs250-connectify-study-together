@@ -1,0 +1,315 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex !important;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffa5ab !important; 
+}
+
+nav{
+  font-size: 50px;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  /* background-color: #ffa5ab;
+   */
+  /* -webkit-animation: radiate 1s forwards ; */
+  /* -webkit-animation: wtob 1s forwards; */
+  /* -moz-animation: radiate 1s ease-in-out infinite alternate;
+  animation: radiate 1s ease-in-out infinite alternate; */
+}
+
+button:not(:hover){
+  /* -webkit-animation: nradiate 1s forwards ; */
+  /* -webkit-animation: btow 1s forwards; */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/*
+========================
+    Landing Page
+========================
+*/
+
+/*    Header   */
+#conHead{
+  color:#ffffff;
+  font-size: 200px;
+  text-align: center;
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  height: 250px;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+/*    Inner Container   */
+#conHead_div{
+  background-color: #d4ff9d;
+  border-radius: 30px;
+  width: 1350px;
+  height: 590px;
+  position: relative;
+  left: 20%;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+#conHead_div p{
+  font-size: 30px;
+  color: white;
+}
+
+/*    Start Button    */
+#start{
+  width: 300px;
+}
+
+#start:hover{
+  -webkit-animation: radiate 1s forwards ;
+}
+#start:not(:hover){
+  -webkit-animation: nradiate 1s forwards ;
+}
+
+
+
+/* 
+=====================
+      DISCOVER 
+=====================
+*/
+
+/*    Navigation Bar    */
+#navBar {
+  position: fixed;
+  z-index: 0;
+  top: -10px;
+  left:0px; 
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #d4ff9d;
+  display: flex;
+  
+}
+/* Hold the position of Nav bar */
+#navBarRel{
+  position: relative;
+  top: -10px;
+  left:0px; 
+  width: 100%;
+  height: 70px;
+  z-index: -1;
+}
+.navMenu {
+  z-index: 10;
+}
+#navMenuCon{
+  /* position: relative; */
+  align-self: flex-start;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+
+#LogoCon {
+  align-self: center;
+  margin-top: 15px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  left: 36%;
+  
+}
+#Logo {
+  
+  color:#ffffff;
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+
+  -webkit-animation: glow1 1s ease-in-out infinite alternate;
+
+}
+
+
+#sidebar {
+  position: fixed;
+  left: 0px;
+  top:0px;
+  width: 250px;
+  height: 500px;
+  background-color: #b7dd85;
+  
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+#backMenu{
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.navbtn {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+#rowGroup{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#navSettingBtn{
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+#DiscoverText{
+  position: relative;
+  height: 100px;
+}
+
+#DiscoverDiv{
+  position: relative;
+  background-color: #242424;
+  width: 100px;
+  height: 100px;
+}
+/* 
+=====================
+      ANIMATIONS  
+=====================
+*/
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #f8a2a2;
+  }
+  to {
+    text-shadow: 0 0 20px #f8a2a2;
+  }
+}
+@-webkit-keyframes glow1 {
+  from {
+    text-shadow: 0 0 10px #f7b4b4;
+  }
+  to {
+    text-shadow: 0 0 20px #f8a2a2 ;
+  }
+}
+
+@-webkit-keyframes radiate {
+  from {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  to{
+    background-color: #ffa5ab;
+    color: #1a1a1a
+  }
+}
+
+@-webkit-keyframes nradiate {
+  from {
+    background-color: #ffa5ab;
+    color: #1a1a1a
+  }
+  to{
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+
+
+@-webkit-keyframes wtob {
+  from {
+    color: #ffffff;
+  }
+  to{
+    color: #1a1a1a;
+  }
+}
+
+@-webkit-keyframes btow {
+  from {
+    color: #1a1a1a;
+  }
+  to{
+    color: #ffffff;
+  }
+}
