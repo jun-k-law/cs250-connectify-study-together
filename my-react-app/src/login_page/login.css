@@ -1,32 +1,67 @@
 .card-body {
-    width: 600px;
-    color: black;
+    width: 300px;
+    color: rgb(0, 0, 0);
     margin-left: 7%;
     margin-top: 15%
 }
 
 .card {
-    width: 700px;
-    height: 700px;
-    margin-left: 90%;
-    margin-top: 15%;
+    background-color: rgb(255, 255, 255);
+    width: 40vw !important;
+    height: 600px !important;
+    top: -5%;
+    left: -11%;
+    display: flex;
+    align-items: center !important;
+    justify-items: center !important;
 }
 
 .login-button {
-    margin-top: 10%;
+    margin-top: 4% !important;
 }
 
+#passHelp{
+    margin-top: 20% !important;
+}
+
+
 .login {
-    margin-top: 12%;
-    margin-bottom: 3%;
+    margin-top: 3% !important;
+    margin-bottom: 1% !important;
 }
 
 .top {
-    margin-left: 36%;
-    margin-top: -7%;
+    margin-left: 33%!important;
+    margin-top: -12% !important;
+    padding-bottom: 0px !important;
+    width: 30%;
     font-size: 45px;
+    /* background-color: black; */
 }
 
+.create-button{
+    margin-top: 3% !important;
+}
 .forgot-password {
-    margin-top: 1%;
+    margin-top: 3% !important;
+}
+
+
+body {
+    margin: 0;
+    height: 100vh !important;
+    display: flex !important;
+    /* align-items: center !important; */
+    justify-items: center !important;
+    
+}
+
+form {
+    padding-top: 0px;
+    width: 35vw;
+    height: 100px;
+}
+
+input {
+    background-color: rgb(246, 246, 246) !important;
 }

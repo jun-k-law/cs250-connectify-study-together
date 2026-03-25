@@ -2,7 +2,7 @@ import "bootswatch/dist/minty/bootstrap.min.css";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-
+import Hi from './uitest.jsx'
 import Testing from './test.jsx'
 
 // import 
@@ -15,5 +15,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     <Testing/>
+    {/* <Hi/> */}
   </StrictMode>,
 );
