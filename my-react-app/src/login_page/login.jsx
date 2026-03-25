@@ -34,18 +34,18 @@ export default function Login () {
 
 
     return (
-        <div className="all"> 
-            <div class="card">
-                <div class="card-body">
+        <> 
+            <div className="card">
+                <div className="card-body">
                     <h2 className="top"> Sign in </h2>
                     
                     <form onSubmit = {handlesSignUp}>
                     <div className="login">
-                <label for="exampleInputEmail1" class="form-label mt-4"> Email address </label>
+                <label for="exampleInputEmail1" class="form-label mt-4">Email address:</label>
                 <input value = {email} onChange = {(e) => setEmail(e.target.value)} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
             </div>
                 <div className="pass">
-                    <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                    <label for="exampleInputPassword1" class="form-label mt-4">Password:</label>
                     <input value = {password} onChange = {(e) => setPassword(e.target.value)} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off"/>
                     <div className="forgot-password">  
                         <small id="passHelp" class="form-text text-muted"> <u>Forgot password?</u> </small>
@@ -55,7 +55,7 @@ export default function Login () {
 
             <div>
 
-            <div className="Create - button"> 
+            <div className="create-button"> 
                 <button onClick={() => goTo("/createAccount_page")} class="btn btn-primary"> Create account </button>
             </div>
 
@@ -73,6 +73,6 @@ export default function Login () {
 
 
 
-    </div>
+    </>
     );
 }
