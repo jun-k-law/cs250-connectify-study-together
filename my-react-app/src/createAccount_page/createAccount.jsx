@@ -37,15 +37,15 @@ export default function Create () {
         <div className="all"> 
             <div class="card">
                 <div class="card-body">
-                    <h2 className="top"> Create account </h2>
+                    <h2 className="topp"> Create account </h2>
                     
                     <form onSubmit = {handlesSignUp}>
                     <div className="login">
-                <label for="exampleInputEmail1" class="form-label mt-4"> Email address </label>
+                <label for="exampleInputEmail1" class="form-label mt-4"> Email address: </label>
                 <input value = {email} onChange = {(e) => setEmail(e.target.value)} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
             </div>
                 <div className="pass">
-                    <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                    <label for="exampleInputPassword1" class="form-label mt-4">Password:</label>
                     <input value = {password} onChange = {(e) => setPassword(e.target.value)} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off"/>
 
             <div/>
@@ -56,7 +56,7 @@ export default function Create () {
             
             </div>  
             
-            <div className="Sign Up -button"> 
+            <div className="SignUp -button"> 
                 <button type = "submit"  class="btn btn-primary"> Sign Up </button>
 
             </div>

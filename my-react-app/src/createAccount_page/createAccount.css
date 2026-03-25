@@ -2,14 +2,15 @@
     width: 600px;
     color: black;
     margin-left: 7%;
-    margin-top: 15%
+    margin-top: 15%;
+    display:flexbox;
 }
 
 .card {
     width: 700px;
     height: 700px;
     margin-left: 90%;
-    margin-top: 15%;
+    margin-top: 9%;
 }
 
 .login-button {
@@ -21,12 +22,17 @@
     margin-bottom: 3%;
 }
 
-.top {
-    margin-left: 36%;
-    margin-top: -7%;
+.topp {
+    align-self: center;
+    justify-self: center;
+    margin-left:-30px;
     font-size: 45px;
 }
 
 .forgot-password {
     margin-top: 1%;
+}
+
+.SignUp{
+    margin-top: 4%;
 }
