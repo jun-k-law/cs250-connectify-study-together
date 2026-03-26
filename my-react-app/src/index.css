@@ -294,11 +294,6 @@ button:focus-visible {
   position: absolute;
   transform: translateX(-300px);
 }
-
-
-
-
-
 #groups{
   background-color: #e49398;
   width: 90% !important;

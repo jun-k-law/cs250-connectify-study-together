@@ -46,7 +46,8 @@ function Testt(){
         );
 
         setFilter(filter_Item)
-
+        console.log(currentText.toLowerCase())
+        console.log(gr.Class.toLowerCase())
         console.log(filter_Item)
     }
 
