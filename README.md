@@ -16,8 +16,9 @@ Install Node.js:
 Install dependencies:
 - npm install
 
-Libraries:
-Bootswatch (UI):
+Libraries:  
+
+Bootswatch (UI):  
 - npm install bootswatch
 
 Motion (UI):
