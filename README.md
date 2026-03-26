@@ -12,6 +12,7 @@ Install Node.js:
 - Goto: Command prompt or type cmd in window search bar:
 - node -v check node version/ if it is installed
 - npm -v check npm version/ if it is installed
+- npm list check all versions
 
 Install dependencies:
 - npm install
@@ -36,5 +37,22 @@ Important:
 - Make sure to include an .env file with (copy and paste info below):
    VITE_SUPABASE_URL=<SUBSTITUTE_SUPABASE_URL>
    VITE_SUPABASE_PUBLISHABLE_KEY=<SUBSTITUTE_SUPABASE_PUBLISHABLE_KEY>
+- Make sure everything is up to date (should be these versions or above):
+├── @eslint/js@9.39.2  
+├── @supabase/supabase-js@2.100.0  
+├── @types/react-dom@19.2.3    
+├── @types/react@19.2.14  
+├── @vitejs/plugin-react@5.1.4  
+├── bootswatch@5.3.8    
+├── eslint-plugin-react-hooks@7.0.1  
+├── eslint-plugin-react-refresh@0.4.26  
+├── eslint@9.39.2  
+├── globals@16.5.0  
+├── motion@12.34.3  
+├── react-dom@19.2.4  
+├── react-router-dom@7.13.0  
+├── react@19.2.4  
+└── vite@7.3.1  
+- if not, run: npm install react@latest react-dom@latest (for react dom and react only)
 
 All testing was done manually. See midterm handoff document for more information. 
