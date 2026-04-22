@@ -411,10 +411,10 @@ button:focus-visible {
 }
 @-webkit-keyframes glow1 {
   from {
-    text-shadow: 0 0 10px #8ddc86;
+    text-shadow: 0 0 10px #d698dc;
   }
   to {
-    text-shadow: 0 0 20px #93db8c ;
+    text-shadow: 0 0 20px #e276c1 ;
   }
 }
 

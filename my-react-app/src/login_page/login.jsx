@@ -26,6 +26,9 @@ export default function Login () {
         }
 
         setMessage("Check your email!")
+        
+        
+
 
         if (data?.session) goTo("/home");
     };

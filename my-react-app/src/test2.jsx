@@ -11,7 +11,10 @@ function Testt(){
     const[showMenu, setShowMenu] = useState(false);     // SHOW/NOT SHOW SIDE BAR
     const [selected, setSelected] = useState(null)      // FOR THE CARDS OF THE GROUPS
     const [inpVal, setInpVal] = useState('')            // 
-    const [filtered, setFilter] = useState([])            //
+    const [filtered, setFilter] = useState([])          //
+
+    const [logged, setLogged] = useState(false)         // Set logged in status
+    
     
     // PUT DATA INTO LIST FROM SUPABASE
     useEffect (() => {
@@ -26,10 +29,49 @@ function Testt(){
             }
         }
 
+        // console.log(data.Class)
         fetchData();
     }, []);
-    
 
+
+    /*  
+        ==========================
+            CHECK LOAD USER
+        ==========================
+    */ 
+
+    const [user, setUser] = useState(null)
+
+
+    // Get current user
+//     useEffect(() => {
+//          //Runs on the first render
+//          //And any time any dependency value changes
+//      }, [prop, state]);
+
+    useEffect(() => {
+        const loadUser = async() =>{
+            const {data: {user}, error} = await supabase.auth.getUser();
+            if (user) {
+                setUser(user)
+                setLogged(true)
+            }
+            else{
+                setUser(null)
+                setLogged(false)
+            }
+        }
+
+        
+        // run loadUser
+        loadUser()
+    },[]);
+    
+    /*  
+        ==========================
+                SEARCH BAR
+        ==========================
+    */
     // HANDLE CHANGE EVENT FROM INPUT
     const changeHandle = (event) =>{
         const currentText = event.target.value;         // 
@@ -42,7 +84,7 @@ function Testt(){
         }
 
         const filter_Item = gr.filter(item => 
-            item.Class.toLowerCase().includes(currentText.toLowerCase)// Check if input lowercase include any of the dataset lowercase
+            item.Class.toLowerCase().includes(currentText.toLowerCase())// Check if input lowercase include any of the dataset lowercase
         );
 
         setFilter(filter_Item)
@@ -50,6 +92,24 @@ function Testt(){
         console.log(gr.Class.toLowerCase())
         console.log(filter_Item)
     }
+
+
+    /*  
+        ==========================
+                Sign Out
+        ==========================
+    */  
+    const signingOut = async() =>{
+
+        if (logged){
+            const {  error } = await supabase.auth.signOut()
+            setLogged(false)
+            setUser(null)
+        }
+        else{
+            nav("/login_page")
+        }
+    };
 
     // DISPLAY
     return(
@@ -127,10 +187,11 @@ function Testt(){
                     <button id="backMenu" onClick={() => setShowMenu(false)}>
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
-                    <button class = "navbtn" id = "homebtn"onClick={() => nav("/")}>Home</button>
-                    <button class = "navbtn" onClick={() => nav("/")}>My Groups</button>
+                    <button class = "navbtn" id = "homebtn"onClick={() => nav("/home")}>Home</button>
+                    <button class = "navbtn" onClick={() => nav("/pro")}>Profiles</button>
                     <button class = "navbtn" onClick={() => nav("/")}>Contact Us</button>
-                    <button class = "navbtn" onClick={() => nav("/")}>Login</button>
+                    <button class = "navbtn" onClick={signingOut}>{logged? "Sign Out" : "Log In"}</button>
+                    <button class = "navbtn" onClick={() => nav("/chat_page")}>Connections</button>
                     <div id = "rowGroup">
                         <button id = "navSettingBtn" onClick={() => nav("/")}><i class="fa-solid fa-gear"></i></button>
                         <button id = "navSettingBtn" onClick={() => nav("/")}>About</button>
