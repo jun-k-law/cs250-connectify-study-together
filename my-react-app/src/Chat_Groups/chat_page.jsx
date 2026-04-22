@@ -19,6 +19,8 @@ export default function Group_Chat(){
 
     const [chatlog, setChatlog] = useState([])
 
+    const [textMessages, setTextMessages] = useState("")
+
 
     // Get current user
 //     useEffect(() => {
@@ -49,7 +51,7 @@ export default function Group_Chat(){
 
     useEffect(()=>{
         const loadData = async() =>{
-            const {data, error} = await supabase.from('stuff').select('*');
+            const {data, error} = await supabase.from('Chat').select('*');
 
             if(error){
                 console.log("Supabase error:", error)
@@ -84,6 +86,17 @@ export default function Group_Chat(){
         }
     };
 
+
+    const writingMessage = (event) =>{
+        const currentText = event.target.value;
+        if(!currentText){
+            
+            console.log("Can't access")
+            return;
+        }
+
+        setTextMessages(currentText)
+    }
     // DISPLAY
     return(
         <>
@@ -126,9 +139,9 @@ export default function Group_Chat(){
 
                             <div id= "pic"></div>
                             <div id="nnt">
-                                <p id="test">{item.Class}</p>
+                                <p id="test">{item.User} <span id="time-text">{item.Time}</span></p>
                                 <div id = "tb">
-                                    <p >message message message message message message messagemess agemessagemessagem  essagemessagaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaemessage</p>
+                                    <p >{item.Text}</p>
                                 </div>
                             </div>
                             
@@ -141,7 +154,7 @@ export default function Group_Chat(){
                     </div>
                 </div>
                 <div id="texting-nav">
-                    <input type="text" id="texting" />
+                    <input type="text" id="texting" placeholder="Write a message"/>
                     <div id="send"></div>
                 </div>
             </div>
