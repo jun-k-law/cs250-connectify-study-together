@@ -130,7 +130,8 @@
 .convo-chat{
     /* background-color: rgb(154, 21, 21); */
     width: 97%;
-    height: 200px ;
+    /* height: 200px ; */
+    min-height: 200px;
     display: flex;
     
     gap: 20px;
@@ -162,8 +163,9 @@
     position: relative;
     background-color: #b9de8b;
     border-radius: 50px;
-    width: 18%;
-    height: 70px;
+    width:50px;
+    height:50px;
+    padding-right:50px;
 }
 
 #nnt{
@@ -179,11 +181,18 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: auto;
-    padding-left: 5%;
+    padding-left: 10px;
     border-radius: 15px;
     word-break: break-all;
     overflow-wrap: break-word; white-space: normal;
     padding-right: 4%;
     padding-top: 1%;
+    max-width: 100%;
 }
 
+
+#time-text{
+    position: relative;
+    top: 10px;
+    background-color: black;
+}
