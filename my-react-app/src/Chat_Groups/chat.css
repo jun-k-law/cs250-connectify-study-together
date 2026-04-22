@@ -1,0 +1,189 @@
+#chat-box{
+    background-color: rgb(255, 255, 255);
+    grid-area: chat-box;
+    border-radius: 10px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+#sticky-prof-box{
+    background-color: aliceblue;
+    position: sticky;
+    grid-area:sticky-prof-box;
+    border-radius: 10px;
+}
+
+#messages-box{
+    background-color: aliceblue;
+
+    grid-area:messages-box ;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+#gcon {
+    display: grid;
+    grid-template-areas: 
+        "chat-box messages-box"
+        "chat-box messages-box"
+        "chat-box messages-box"
+        "sticky-prof-box messages-box";
+    grid-template-columns: 1fr 3fr;
+    gap: 35px;
+    /* background-color: black; */
+    padding:20px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100vw;
+    height: 90vh;
+    z-index: 1;
+}
+
+
+
+
+
+
+/* MESSAGES */
+
+#mess-nav{
+    position: relative;
+    background-color: #abe265;
+    width: 100%;
+    height: 12%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    z-index: 4;
+}
+#text-box{
+    
+    position: relative;
+    /* background-color: rgb(206, 66, 66); */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    margin-top:-1%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+
+    padding-top: 1%;
+    padding-bottom: 3%;
+    
+
+    overflow: auto;
+    
+}
+.convo{
+    /* position: relative; */
+    width: 85%;
+    height: 18%;
+    background-color: #b9de8b;
+    border-radius: 10px;
+    margin-left: 8%;
+    margin-top: 8%;
+    
+}
+
+#texting-nav{
+    position: relative;
+    background-color: #abe265;
+    width: 100%;
+    height: 14%;
+    margin-top: -3%;
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+    gap:3%;
+}
+
+#texting{
+    
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid white;
+    width: 82%;
+    height: 110%;
+    color: black;
+    padding-left: 3%;
+    padding-right:3%;
+    padding-bottom: 0.5%;
+    
+}
+
+#send{
+    border-radius: 20px;
+    width: 13%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    
+}
+
+.convo-chat{
+    /* background-color: rgb(154, 21, 21); */
+    width: 97%;
+    height: 200px ;
+    display: flex;
+    
+    gap: 20px;
+    color: black;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#aa{
+    /* background-color: black; */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    flex-wrap: wrap;
+    
+    padding-left: 3%;
+    scrollbar-width: none;
+
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+#pic{
+    position: relative;
+    background-color: #b9de8b;
+    border-radius: 50px;
+    width: 18%;
+    height: 70px;
+}
+
+#nnt{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#tb{
+    background-color: #b9de8b;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    padding-left: 5%;
+    border-radius: 15px;
+    word-break: break-all;
+    overflow-wrap: break-word; white-space: normal;
+    padding-right: 4%;
+    padding-top: 1%;
+}
+

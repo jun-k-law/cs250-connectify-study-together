@@ -1,0 +1,6 @@
+#a:hover{
+  -webkit-animation: radiate 1s forwards ;
+}
+#a:not(:hover){
+  -webkit-animation: nradiate 1s forwards ;
+}
