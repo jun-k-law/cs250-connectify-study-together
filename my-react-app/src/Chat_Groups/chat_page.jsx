@@ -11,16 +11,32 @@ import {motion, AnimatePresence} from "motion/react"
 export default function Group_Chat(){
     const nav = useNavigate();                          // USE FOR REROUTING
 
-
+    const [gr, setGr] = useState([]);
     const[showMenu, setShowMenu] = useState(false);     // SHOW/NOT SHOW SIDE BAR
     const [logged, setLogged] = useState(false)         // Set logged in status
-    const [user, setUser] = useState(null)
-
-
+    const [user, setUser] = useState("")
+    const [namew, setName] = useState("")
+    const [prof, setProf] = useState([])
     const [chatlog, setChatlog] = useState([])
 
     const [textMessages, setTextMessages] = useState("")
 
+
+    useEffect (() => {
+        async function fetchData() {
+           const { data, error } = await supabase.from('stuff').select('*');
+
+           if (error) {
+                console.error("Supabase error:", error);
+            } else {
+                console.log("Supabase data:", data);
+                setGr(data);
+            }
+        }
+
+        // console.log(data.Class)
+        fetchData();
+    }, []);
 
     // Get current user
 //     useEffect(() => {
@@ -32,9 +48,10 @@ export default function Group_Chat(){
         const loadUser = async() =>{
             const {data: {user}, error} = await supabase.auth.getUser();
             if (user) {
-                setUser(user)
+                setUser(user.id)
                 console.log(user.id)
                 setLogged(true)
+
             }
             else{
                 setUser(null)
@@ -45,29 +62,53 @@ export default function Group_Chat(){
         loadUser();
 
         
-        // run loadUser
         
     },[]);
 
     useEffect(()=>{
-        const loadData = async() =>{
-            const {data, error} = await supabase.from('Chat').select('*');
+        const intervalId = setInterval(() => {
+        
+            const loadData = async() =>{
+                const {data, error} = await supabase.from('Chat').select('*');
+
+                if(error){
+                    console.log("Supabase error:", error)
+                }else{
+                    // console.log(data)
+                    setChatlog(data)
+
+                    
+                }
+            }
+            
+            loadData();
+        }, 1500); // Runs every 5000ms (5 seconds)
+
+        return () => {
+            clearInterval(intervalId);
+        };
+        
+    },[])
+
+    useEffect (() =>{
+        const loadDataw = async() =>{
+
+            
+            const {data, error} = await supabase.from('profiles').select('*');
 
             if(error){
                 console.log("Supabase error:", error)
             }else{
-                console.log(data)
-                setChatlog(data)
-
-                
+                console.log( data)
+                setProf(data)
             }
         }
-        
-        loadData();
-
-        
+        loadDataw();
     },[])
     
+
+
+
 
     /*  
         ==========================
@@ -88,6 +129,7 @@ export default function Group_Chat(){
 
 
     const writingMessage = (event) =>{
+        
         const currentText = event.target.value;
         if(!currentText){
             
@@ -96,6 +138,33 @@ export default function Group_Chat(){
         }
 
         setTextMessages(currentText)
+
+        // console.log(event.target.value)
+    }
+
+
+    const check = async() => {
+        const timeString = new Date().toLocaleTimeString();
+        const {data: {user}, error} = await supabase.auth.getUser();
+
+        const { data } = await supabase.from('profiles').select('*');
+        const profile = data.find(p => p.UID === user.id);
+
+        console.log(profile?.Name);
+
+        const a = profile?.Name
+
+        console.log(a + " " + textMessages + " " + timeString)
+
+        if(textMessages){
+            const {err} = await supabase
+            .from('Chat')
+            .insert([{User: a, Text: textMessages, Time: timeString}])
+            console.log('sent')
+        }
+        
+        
+
     }
     // DISPLAY
     return(
@@ -119,14 +188,21 @@ export default function Group_Chat(){
         
         <div id="gcon">
             <div id="chat-box">
-                
+                {gr.map((item,index) => (
+                    <motion.div key={index} 
+                        id="classes"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.8 }}
+                    >
+                        <p>{item.Class}</p>
+
+                    </motion.div>
+                ))}
             </div>
 
-            <div id="sticky-prof-box">
+            
 
-            </div>
-
-            <div id="messages-box">
+            <div id="messages-box" >
                 
                 <div id="mess-nav"></div>
                 <div id="text-box">
@@ -134,6 +210,7 @@ export default function Group_Chat(){
 
                     <div id = "aa">
                         {chatlog.map((item, index) => (
+                        
                         <div className="convo-chat"
                                 key = {index}>
 
@@ -154,8 +231,15 @@ export default function Group_Chat(){
                     </div>
                 </div>
                 <div id="texting-nav">
-                    <input type="text" id="texting" placeholder="Write a message"/>
-                    <div id="send"></div>
+                    
+                        <input type="text" id="texting2" placeholder="Write a message" onChange={writingMessage} />
+                    
+                    
+                    <motion.button 
+                        id="send" onClick={check}
+                        whileHover={{ scale: 1.1 }}>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </motion.button>
                 </div>
             </div>
         
