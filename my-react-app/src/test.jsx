@@ -14,7 +14,7 @@ function Testing(){
                 <Route path="/" element={<Connectify_Landing />} />
                 <Route path="/home" element={<Testt />} />
                 <Route path ="/login" element={<Login_Page />} />
-                <Route path="/login_page" element={<Login_Screen />}/> 
+                <Route path="login_page/" element={<Login_Screen />}/> 
                 <Route path="/createAccount_page" element={<CreateAccount />} />
                 <Route path="/profile" element={<Profile />} />
                
