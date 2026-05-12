@@ -5,6 +5,7 @@ import Connectify_Landing from './Landing_Page';
 import Login_Page from './Login';
 import Login_Screen from './login_page/login'; 
 import CreateAccount from "./createAccount_page/createAccount";
+import Profile from "./profile"
 
 function Testing(){
     return (
@@ -15,6 +16,7 @@ function Testing(){
                 <Route path ="/login" element={<Login_Page />} />
                 <Route path="/login_page" element={<Login_Screen />}/> 
                 <Route path="/createAccount_page" element={<CreateAccount />} />
+                <Route path="/profile" element={<Profile />} />
                
             
             </Routes>

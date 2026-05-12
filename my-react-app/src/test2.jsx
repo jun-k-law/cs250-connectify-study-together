@@ -130,7 +130,7 @@ function Testt(){
                     <button class = "navbtn" id = "homebtn"onClick={() => nav("/")}>Home</button>
                     <button class = "navbtn" onClick={() => nav("/")}>My Groups</button>
                     <button class = "navbtn" onClick={() => nav("/")}>Contact Us</button>
-                    <button class = "navbtn" onClick={() => nav("/")}>Login</button>
+                    <button class = "navbtn" onClick={() => nav("/profile")}>Login</button>
                     <div id = "rowGroup">
                         <button id = "navSettingBtn" onClick={() => nav("/")}><i class="fa-solid fa-gear"></i></button>
                         <button id = "navSettingBtn" onClick={() => nav("/")}>About</button>

@@ -1,0 +1,42 @@
+.card {
+    width: 700px !important;
+    margin: 700px !important;
+    height: 750px !important;
+    margin-top: 100px !important;
+    margin-left: 850px !important;
+    
+}
+
+.card-body {
+    width: 650px;
+    margin-left: 10px;
+}
+
+.breadcrumb {
+    width: 100%;
+    margin: 0 auto !important;
+}
+
+.names {
+    margin-top: -50px;
+}
+
+.social {
+    margin-top: 30px;
+}
+
+.following {
+    margin-left: 40px;
+}
+
+.info {
+    margin-top: 25px;
+}
+
+.link-info {
+    margin-top: 40px;
+}
+
+.btn.btn-dark {
+    margin-left: 1785px;
+}
