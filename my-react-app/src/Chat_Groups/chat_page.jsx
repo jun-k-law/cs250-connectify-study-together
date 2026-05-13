@@ -60,9 +60,6 @@ export default function Group_Chat(){
         }
 
         loadUser();
-
-        
-        
     },[]);
 
     useEffect(()=>{
@@ -267,7 +264,7 @@ export default function Group_Chat(){
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
                     <button class = "navbtn" id = "homebtn"onClick={() => nav("/home")}>Home</button>
-                    <button class = "navbtn" onClick={() => nav("/pro")}>Profiles</button>
+                    <button class = "navbtn" onClick={() => nav("/profile")}>Profiles</button>
                     <button class = "navbtn" onClick={() => nav("/")}>Contact Us</button>
                     <button class = "navbtn" onClick={signingOut}>{logged? "Sign Out" : "Log In"}</button>
                     <button class = "navbtn" onClick={() => nav("/chat_page")}>Connections</button>

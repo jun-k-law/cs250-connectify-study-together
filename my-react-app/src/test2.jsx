@@ -93,6 +93,20 @@ function Testt(){
         console.log(filter_Item)
     }
 
+    
+    const addGroup = async(cla) =>{
+        const {data: {user}, error: authError} = await supabase.auth
+        .getUser()
+
+        const {data: personalInfo, error: infoErr} = await supabase.from('profiles')
+        .select().eq("UID", user.id).single()
+
+        const newGroup = personalInfo.Groups + ", " + cla
+        console.log(personalInfo.Groups + " " + cla)
+
+        const {error : err} = await supabase.from('profiles')
+        .update({Groups : newGroup}).eq("UID", user.id)
+    }
 
     /*  
         ==========================
@@ -188,7 +202,7 @@ function Testt(){
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
                     <button class = "navbtn" id = "homebtn"onClick={() => nav("/home")}>Home</button>
-                    <button class = "navbtn" onClick={() => nav("/pro")}>Profiles</button>
+                    <button class = "navbtn" onClick={() => nav("/profile")}>Profiles</button>
                     <button class = "navbtn" onClick={() => nav("/")}>Contact Us</button>
                     <button class = "navbtn" onClick={signingOut}>{logged? "Sign Out" : "Log In"}</button>
                     <button class = "navbtn" onClick={() => nav("/chat_page")}>Connections</button>
@@ -245,18 +259,26 @@ function Testt(){
                         <p id = "time">Time : {selected.MeetingTime}</p>
                         <p id = "occ">People : {selected.Occupancy}</p>
                         <motion.button  
+                            onClick={() => addGroup(selected.Class)}
                             id = "join"
                             whileHover={{
                                 backgroundColor: "#ff7f50",
-                                scale: [null, 1.05],
+                                scale: 1.2,
                                 transition: {
                                     duration: 0.5,
                                     times: [0, 0.3, 1],
                                     ease: ["easeInOut", "easeOut"],
                                 },
+                            }
+                            
+                            
+                            }
+                            whileTap={{
+                                scale: 0.8,
+                                backgroundColor: "#52d18b"
                             }}
                             transition={{
-                                duration: 0.3,
+                                duration: 0.1,
                                 ease: "easeOut",
                             }}
                         >
@@ -264,11 +286,11 @@ function Testt(){
                         
                         </motion.button>
                         <motion.button 
-                            onClick={() => setSelected(null)} 
+                            onClick={() => setSelected(false)} 
                             id = "out"
                             whileHover={{
                                 backgroundColor: "#9a242c",
-                                scale: [null, 1.1],
+                                scale: 1.2,
                                 transition: {
                                     duration: 0.5,
                                     times: [0, 0.6, 1],
@@ -279,6 +301,7 @@ function Testt(){
                                 duration: 0.3,
                                 ease: "easeOut",
                             }}
+                            
                             >
                                 X
                         </motion.button>

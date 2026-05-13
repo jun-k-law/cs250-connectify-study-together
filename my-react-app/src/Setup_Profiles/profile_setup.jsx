@@ -8,7 +8,7 @@ import './setup.css';
 
 
 // useEffect(() => {
-//         // 1. Set up the interval
+//         
 //         const intervalId = setInterval(() => {
 //             console.log('Running in the background...');
 
@@ -25,7 +25,7 @@ import './setup.css';
 
             
 //             fetchData();
-//         }, 3000); // Runs every 5000ms (5 seconds)
+//         }, 3000); // Runs every 3000ms (3 seconds)
 
 //         //  Clean up the interval on unmount
 //         return () => {

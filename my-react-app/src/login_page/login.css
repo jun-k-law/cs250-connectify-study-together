@@ -7,11 +7,11 @@
 
 .card {
     background-color: rgb(255, 255, 255);
-    width: 40vw !important;
-    height: 600px !important;
-    top: -5%;
-    left: -11%;
-    display: flex;
+    width: 40% !important;
+    height: 500px !important;
+    top: -9%;
+    left: -20%;
+    display: flex !important; 
     align-items: center !important;
     justify-items: center !important;
 }
