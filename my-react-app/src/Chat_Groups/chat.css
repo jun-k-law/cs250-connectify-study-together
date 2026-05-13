@@ -145,7 +145,8 @@
     width: 97%;
     /* height: 200px ; */
     min-height: 200px;
-    display: flex;
+    min-width: 50px;
+    
     
     gap: 20px;
     color: black;
@@ -200,6 +201,7 @@
     padding-right: 4%;
     padding-top: 1%;
     max-width: 100%;
+    min-width: 10px;
 }
 
 
@@ -229,4 +231,13 @@
     margin-bottom: 7%;
     align-items: center;
     color: black;
+}
+
+#piccy{
+    width: 22%;
+    height: 60%;
+    background-color: rgb(255, 255, 255);
+    margin-left: 6%;
+    border-radius: 100px;
+    margin-right: 6%;
 }

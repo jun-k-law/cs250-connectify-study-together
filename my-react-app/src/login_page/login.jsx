@@ -28,13 +28,23 @@ export default function Login () {
         setMessage("Check your email!")
         
         
-
+        
 
         if (data?.session) goTo("/home");
     };
 
 
+    // const makeProfile = async()=>{
 
+    //     const {data: {user}, error} = await supabase.auth.getUser();
+
+
+    //     const {err} = await supabase
+    //         .from('profiles')
+    //         .insert([{
+    //             UID: user.id
+    //         }])
+    // }
 
     return (
         <> 
