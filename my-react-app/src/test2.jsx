@@ -15,7 +15,7 @@ function Testt(){
 
     const [logged, setLogged] = useState(false)         // Set logged in status
     
-    
+    const [newGroup,setGrr] = useState("")
     // PUT DATA INTO LIST FROM SUPABASE
     useEffect (() => {
         async function fetchData() {
@@ -93,19 +93,32 @@ function Testt(){
         console.log(filter_Item)
     }
 
-    
-    const addGroup = async(cla) =>{
+    const send_data = async(s)=> {
+        console.log("CLA: " + s)
         const {data: {user}, error: authError} = await supabase.auth
         .getUser()
 
         const {data: personalInfo, error: infoErr} = await supabase.from('profiles')
         .select().eq("UID", user.id).single()
 
-        const newGroup = personalInfo.Groups + ", " + cla
-        console.log(personalInfo.Groups + " " + cla)
+        if(personalInfo.Groups){
+            const a = s + " " + personalInfo.Groups
+            const {error : err} = await supabase.from('profiles')
+            .update({Groups : a}).eq("UID", user.id)
+        }else{
+            const {error : err} = await supabase.from('profiles')
+            .update({Groups : s}).eq("UID", user.id)
+        }
 
-        const {error : err} = await supabase.from('profiles')
-        .update({Groups : newGroup}).eq("UID", user.id)
+
+    }
+    
+    const addGroup = async(cla) =>{
+        
+
+        send_data(cla)
+
+        // setGrr("")
     }
 
     /*  

@@ -24,15 +24,39 @@ export default function Group_Chat(){
 
     useEffect (() => {
         async function fetchData() {
-           const { data, error } = await supabase.from('stuff').select('*');
+            const {data: {user}, error: authError} = await supabase.auth
+            .getUser()
 
-           if (error) {
-                console.error("Supabase error:", error);
+            const {data: personalInfo, error: infoErr} = await supabase
+            .from("profiles").
+            select().eq("UID", user.id).single()
+
+            if (infoErr || authError) {
+                    console.error("Supabase error:", error);
             } else {
                 console.log("Supabase data:", data);
-                setGr(data);
+                if(!( personalInfo.Groups == "NULL")){
+                    
+
+                    const str = personalInfo.Groups.replaceAll(",","")
+
+                    const arr = str.split(" ")
+
+                    console.log("THIS:" + str)
+                    setGr(arr.map( item => ({
+                    key: item,
+                    value: item,
+                    label: item
+                    })))
+                    
+
+                    
+
+                }
             }
-        }
+
+
+            }
 
         // console.log(data.Class)
         fetchData();
@@ -191,7 +215,7 @@ export default function Group_Chat(){
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <p>{item.Class}</p>
+                        <div id="piccy"></div><p>{item.value}</p>
 
                     </motion.div>
                 ))}

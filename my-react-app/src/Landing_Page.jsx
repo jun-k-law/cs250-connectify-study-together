@@ -10,6 +10,13 @@ function Connectify_Landing(){
                 <button id = "start" onClick={() =>nav("/login_page")}>
                     Start
                 </button>
+            <div>
+            <a href="https://docs.google.com/document/d/1VmhrWeGaSoA8Z1fFoUfnm6ds9oYxEkLkGJMdaK7Q66c/edit?usp=sharing" target="_blank"> Terms of Service</a>
+            
+            <p style={{color: 'black', font: '12px'}}>By accessing this website, you agree to be bound by these Terms of Service.</p>
+           
+         </div>
+           
         </div> 
     );
 }

@@ -9,7 +9,7 @@
     background-color: rgb(255, 255, 255);
     width: 40% !important;
     height: 500px !important;
-    top: -9%;
+    top: -12%;
     left: -20%;
     display: flex !important; 
     align-items: center !important;
@@ -28,6 +28,7 @@
 .login {
     margin-top: 3% !important;
     margin-bottom: 1% !important;
+    
 }
 
 .top {
