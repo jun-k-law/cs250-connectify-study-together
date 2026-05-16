@@ -27,7 +27,7 @@ export default function Create () {
 
         setMessage("Check your email!")
 
-
+        makeProfile()
 
         if (data?.session) goTo("/home");
     };
